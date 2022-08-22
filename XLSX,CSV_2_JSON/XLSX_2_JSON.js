@@ -27,6 +27,8 @@ app.use(express.json())
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'API/')
+        /*create an folde name API because the raw file will save there and then it converts to json and then it will deleted automatcally because of below code */
+       
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
